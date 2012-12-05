@@ -7,11 +7,7 @@ TODO NOW
 --------
 
 - Compare filelist in Dropbox with cache and rebuid only if necessary
-- Detect directories and generate categories
-- Build json
-```json
-	{ [ "category" : "foo", "content" : [ "bar.jpg", "foo.jpg", "bar.png"], [ "category" : "bar", "content" : [ "bar.jpg", "foo.jpg", "bar.png"], ... } 
-```
+- Create a separate file for each gallery contents and then load them with jquery when you click on the gallery name
 - Build basic html
 
 TODO LATER
@@ -23,4 +19,4 @@ CSS
 TODO SOMETIME
 -------------
 
-- Make a version that works without the need of dl.dropbox of batch files
+- Make a version that works without the need of dl.dropbox or batch files
