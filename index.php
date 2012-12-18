@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <?php
-//CONFIG:
-$yourname = 'Lisandro Lorea';
-//Your name
-$userid = '1165389';
-//Your Dropbox user id, ie. what follows https://dl.dropbox.com/u/
-$folder_name = 'Portfolio';
-//The name of your autofolio folder inside Dropbox/public/
-
-
-
+			require_once("config.php");
 
 			$file = fopen("https://dl.dropbox.com/u/$userid/$folder_name/dir.txt", "r") or exit("Unable to open file!");
 			//$file = fopen("dir.txt", "r") or exit("Unable to open file!");
@@ -68,26 +59,31 @@ $folder_name = 'Portfolio';
 		<!--<script src="jquery.js"></script>-->
 		<script type="text/javascript">
 		 $(document).ready(function(){
-			$('.Home').show();
-			$('.Comics').hide();
-			$('.Concept_Art').hide();
-			$('.PixelArt').hide();
-		
+		 	<?php
+		 	
+		 	foreach ($categories as $cat) {
+		 		echo "\$('.".$cat."').hide();\n";
+		 	}
+		 	
+		 	echo "\$('.".$categories[0]."').show();\n";
+		 	?>	
 		});
 		
-		$('.PixelArt').hide();
-
 		function showCategory() {
 
-			$('.Home').hide();
-			$('.Comics').hide();
-			$('.Concept_Art').hide();
-			$('.PixelArt').hide();
+			<?php
+		 	foreach ($categories as $cat) {
+		 		echo "\$('.".$cat."').hide();\n";
+		 	}
+		 	?>	
 
-			if(document.getElementById('Home').checked) {$('.Home').show(); }
-			if(document.getElementById('Comics').checked) {$('.Comics').show(); }
-			if(document.getElementById('Concept_Art').checked) {$('.Concept_Art').show(); }
-			if(document.getElementById('PixelArt').checked) {$('.PixelArt').show(); }
+		 	<?php
+		 	foreach ($categories as $cat) {
+		 		echo "if(document.getElementById('".$cat."').checked) {\$('.".$cat."').show(); }\n";
+		 	}
+
+		 	?>	
+
 		}
 
 	</script>
@@ -107,16 +103,6 @@ $folder_name = 'Portfolio';
 				echo "<input type='radio' name='categoria' id='$i' onChange='showCategory();' value='$i' checked='checked' />$i</input>";
 			}
 			else echo "<input type='radio' name='categoria' id='$i' onChange='showCategory();' value='$i' />$i</input>";
-
-
-
-
-
-
-
-
-
-
 		}
 
 		?>

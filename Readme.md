@@ -19,4 +19,4 @@ CSS
 TODO SOMETIME
 -------------
 
-- Make a version that works without the need of dl.dropbox or batch files
+- Make a version that uses the Dropbox API and doesn't need "dl.dropbox..." or batch files
