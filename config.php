@@ -20,6 +20,7 @@ class Config
 
     //DO NOT EDIT UNLESS YOU KNOW WHAT YOU'RE DOING
     static function getDirURL(){
+	//return "http://localhost/~noid/autogal/dir.txt";
     	return 'https://dl.dropboxusercontent.com/u/' . self::userid . '/' . self::folder_name . '/dir.txt';
     }
 }
