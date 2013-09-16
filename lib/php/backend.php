@@ -30,8 +30,8 @@ else
 	$myDatabase->generateFromFile(Config::getDirURL());
 	$myGenerator->generatePages( $myDatabase->getCategories(), $myDatabase->getCollection() );
 	$lastmod = fopen('../../autogal.lastmod', 'w');
-	//fwrite($lastmod, $dirhash);
-	//fclose($lastmod);
+	fwrite($lastmod, $dirhash);
+	fclose($lastmod);
 }
 fclose($filelock);
 while (unlink('../../autogal.lock') === false) { ; }

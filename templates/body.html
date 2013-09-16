@@ -1,0 +1,20 @@
+<script type="text/javascript">
+	$( document ).ready(function() {
+		// Bind the event.
+        $(window).hashchange( function(){
+        // Alerts every time the hash changes!
+        $(".dg_gallery").load('cache/' + location.hash.substring(1, location.hash.length) + '.html');
+        })
+
+        if (location.hash == "") {
+        	location.hash =  "#Home";
+        }
+        $(window).hashchange();
+
+		$(".dg_menu").load('cache/category_menu.html');
+	});
+</script>
+<div class="dg_container">
+<ul class="dg_menu"></ul>
+<div class="dg_gallery"></div>
+</div>
