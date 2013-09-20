@@ -39,6 +39,8 @@ class HTMLGenerator {
 			foreach ($categories as $cat) {
 				fwrite($page, "<li class='menu_item black'><a href='#" . $cat .  "'>". $cat . "</a></li>\n");
 			}
+			fwrite($page, "<li class='menu_item black right zoom'><a>[&nbsp;&nbsp;&nbsp;]</a></li>\n");
+			fwrite($page, "<li class='menu_item black right tiles'><a>[][][]</a></li>\n");
 		fclose($page);			
 	}
 }

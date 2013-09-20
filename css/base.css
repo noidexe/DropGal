@@ -1,4 +1,5 @@
 body {
+	color: white;
 	background-color: #3D3434;
 }
 
@@ -93,8 +94,20 @@ body {
 	margin-right: auto;
 }
 
+.dg_gallery {
+	text-align: center;
+}
+
+
+
 .gal_item {
- 	max-height: 200px;
+ 	max-height: 250px;
+	max-width: 100%;
 
 }
 
+.zoom,  .tiles {
+ position:relative;
+ left: 100px;
+
+}
