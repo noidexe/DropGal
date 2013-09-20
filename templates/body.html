@@ -1,20 +1,23 @@
 <script type="text/javascript">
-	$( document ).ready(function() {
+	$( document ).ready(function() { 
 		// Bind the event.
         $(window).hashchange( function(){
-        // Alerts every time the hash changes!
+        // Load the appropiate gallery section whenever the hash changes
         $(".dg_gallery").load('cache/' + location.hash.substring(1, location.hash.length) + '.html');
         })
 
+	//If there is no hash in the URL set it to "Home", the main section
         if (location.hash == "") {
         	location.hash =  "#Home";
         }
+	
+	//Manually triger hashchange() when the page first loads.
         $(window).hashchange();
+	
+	//Load the gallery navigation menu.
+	$(".dg_menu").load('cache/category_menu.html');
 
-		$(".dg_menu").load('cache/category_menu.html');
 	});
 </script>
-<div class="dg_container">
-<ul class="dg_menu"></ul>
-<div class="dg_gallery"></div>
-</div>
+<ul class="dg_menu litegray"></ul><!-- Insert the menu -->
+<div class="dg_gallery"></div><!-- Insert the appropiate gallery section -->

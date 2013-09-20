@@ -16,7 +16,7 @@ class Config
     const userid = '1165389';
     //The name of your autofolio folder inside Dropbox/public/
     const folder_name = 'Portfolio';
-    const max_retries = 20;
+    const max_retries = 3;
 
     //DO NOT EDIT UNLESS YOU KNOW WHAT YOU'RE DOING
     static function getDirURL(){

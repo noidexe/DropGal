@@ -21,7 +21,13 @@ class Database
  	public function addItemToCollection($newitem) {
  		array_push($this->collection, $newitem);
  	}
+	
 
+	//--------------------------
+	//parses a text file with a list
+	//of paths to the images. Replaces local
+	//paths with dropbox urls.
+	//--------------------------
  	public function generateFromFile($file) {
 
 		$dirfile = fopen($file, 'r' ) or exit("Unable to open file!");
