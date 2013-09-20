@@ -1,26 +1,10 @@
 <script type="text/javascript">
 	$( document ).ready(function() {
-        $(".dg_dropgal").on("click", ".zoom", function(e) { 
-		$('.gal_item').css({
-			"height":"inherit",
-			"max-height": "inherit",
-			"width":"100%"
-		});
 
-	 });
-	$(".dg_dropgal").on("click", ".tiles", function(e) {
-		$('.gal_item').css({
-			"max-height": "250px",
-			"max-width": "100%",
-			"height":"inherit",
-			"width": "inherit"
-		});
-
-	});
 		// Bind the event.
         $(window).hashchange( function(){
         // Load the appropiate gallery section whenever the hash changes
-        $(".dg_gallery").load('cache/' + location.hash.substring(1, location.hash.length) + '.html');
+        $("#dg_gallery").load('cache/' + location.hash.substring(1, location.hash.length) + '.html');
         })
 
 	//If there is no hash in the URL set it to "Home", the main section
@@ -32,13 +16,28 @@
         $(window).hashchange();
 	
 	//Load the gallery navigation menu.
-	$(".dg_menu").load('cache/category_menu.html');
+		$("#dg_menu").load('cache/category_menu.html');
 
 	//Zoom and Tile View button behavior
+        $("#dg_dropgal").on("click", ".zoom", function(e) { 
+			$('.gal_item').css({
+				"height":"inherit",
+				"max-height": "inherit",
+				"width":"100%"
+			});
+		});
 
-
-
+		$("#dg_dropgal").on("click", ".tiles", function(e) {
+			$('.gal_item').css({
+				"max-height": "250px",
+				"max-width": "100%",
+				"height":"inherit",
+				"width": "inherit"
+			});
+		});
+		
 	});
+
 </script>
-<ul class="dg_menu litegray"></ul><!-- Insert the menu -->
-<div class="dg_gallery"></div><!-- Insert the appropiate gallery section -->
+<ul id="dg_menu" class="litegray"></ul><!-- Insert the menu -->
+<div id="dg_gallery"></div><!-- Insert the appropiate gallery section -->

@@ -4,7 +4,7 @@ body {
 }
 
 
-.dg_menu li{
+#dg_menu li{
     display:inline;
 }
 /*.dg_menu a{
@@ -13,7 +13,7 @@ body {
 }
 */
 
-.dg_menu {
+#dg_menu {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -88,13 +88,13 @@ body {
 
 
 
-.dg_dropgal {
+#dg_dropgal {
 	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-.dg_gallery {
+#dg_gallery {
 	text-align: center;
 }
 
@@ -103,11 +103,14 @@ body {
 .gal_item {
  	max-height: 250px;
 	max-width: 100%;
+	/*background-image:url('../images/loading.gif');
+	background-repeat:no-repeat;
+	background-position:center;*/
 
 }
 
 .zoom,  .tiles {
  position:relative;
- left: 100px;
+ left: 340px;
 
 }

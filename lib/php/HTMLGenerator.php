@@ -23,7 +23,8 @@ class HTMLGenerator {
 		//insert it in the page with an <img> tag
 		foreach ($col as $item) {   
 		 	if ($item["category"] == $cat_name) {
-		 		fwrite($page, "<img class='gal_item' alt='${item['name']}' src='https://dl.dropboxusercontent.com/u/" . Config::userid . '/' . Config::folder_name . '/' . $item['url'] . "'/>\n");
+		 		fwrite($page, "<img class='gal_item' alt='[Cargando...]' src='https://dl.dropboxusercontent.com/u/" . Config::userid . '/' . Config::folder_name . '/' . $item['url'] . "'>\n");
+		 		//alt='${item['name']}' 
 		 	}
 		 }
 
@@ -39,8 +40,9 @@ class HTMLGenerator {
 			foreach ($categories as $cat) {
 				fwrite($page, "<li class='menu_item black'><a href='#" . $cat .  "'>". $cat . "</a></li>\n");
 			}
-			fwrite($page, "<li class='menu_item black right zoom'><a>[&nbsp;&nbsp;&nbsp;]</a></li>\n");
-			fwrite($page, "<li class='menu_item black right tiles'><a>[][][]</a></li>\n");
+			//fwrite($page, "<li class='muenu_item black dg_loading'><img src='images/loading.gif'><li>\n");
+			fwrite($page, "<li class='menu_item black right zoom'><a>Zoomed</a></li>\n");
+			fwrite($page, "<li class='menu_item black right tiles'><a>Tiled</a></li>\n");
 		fclose($page);			
 	}
 }
