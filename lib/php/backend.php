@@ -10,7 +10,14 @@ require_once('HTMLGenerator.php');
 //and compare its hash with the one 
 //in autogal.lastmod to see if the
 //gallery cache needs to be rebuilt 
+try
+{
 $dirhash = md5(file_get_contents(Config::getDirURL() ));
+}
+catch (Exception $e)
+{
+    throw new Exeption( 'Can\'t get contents of' . Config::getDirURL );
+}
 
 //If dir.txt hasn't changed do nothing...
 if ( file_exists('../../autogal.lastmod') && $dirhash == file_get_contents('../../autogal.lastmod') ) {
@@ -34,8 +41,15 @@ else
 	//create a lock file so two
 	//instances of the script don't 
 	//try to rebuild the galleries at
-	//the same time
-	$filelock = fopen('../../autogal.lock', 'w');
+    //the same time
+    try {
+    	$filelock = fopen('../../autogal.lock', 'w');
+    }
+    catch (Exception $e)
+    {
+        throw new Exeption( 'can\'t create autogal.lock');
+    }
+    
 	
 	$myDatabase = new Database();
 	$myGenerator = new HTMLGenerator();

@@ -29,8 +29,13 @@ class Database
 	//paths with dropbox urls.
 	//--------------------------
  	public function generateFromFile($file) {
-
-		$dirfile = fopen($file, 'r' ) or exit("Unable to open file!");
+    try {
+        $dirfile = fopen($file, 'r' );
+    }
+    catch (Exception $e)
+    {
+        throw new Exception( "Can't get $file");
+    }
 		$cur_file = '';
 		$cur_pair = '';
 		$item = array('category' => '', 'name' => '', 'url' => '');
