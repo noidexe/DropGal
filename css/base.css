@@ -1,6 +1,7 @@
 body {
 	color: #e2a540;
-	background-color: #222222;
+	background-color: rgb(6, 4, 18);
+	background-color: rgba(6, 4, 18, 1);
 }
 
 a:link, a:visited, a:hover, a:active {
